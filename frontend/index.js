@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let records = [];
     let currentPage = 1;
     const recordsPerPage = 10;
+    let myChart;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -118,12 +119,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function updateChart() {
         const ctx = chartCanvas.getContext('2d');
+        if (myChart) {
+            myChart.destroy();
+        }
         const chartData = records.map(record => {
             const [systolic, diastolic, date, time] = record;
             return { x: new Date(`${date}T${time}`), y: systolic };
         });
 
-        new Chart(ctx, {
+        myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 datasets: [{
