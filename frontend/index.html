@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Recorder</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/css/uikit.min.css" />
+</head>
+<body>
+    <div class="uk-container uk-container-small uk-margin-top">
+        <h1>Blood Pressure Recorder</h1>
+        <form id="bpForm" class="uk-form-stacked">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="systolic">Systolic Pressure:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="number" id="systolic" required>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="diastolic">Diastolic Pressure:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="number" id="diastolic" required>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="date">Date:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="date" id="date" required>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="time">Time:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="time" id="time" required>
+                </div>
+            </div>
+            <button type="submit" class="uk-button uk-button-primary">Record</button>
+        </form>
+        <div id="loadingSpinner" class="uk-margin-top uk-text-center" style="display: none;">
+            <div uk-spinner></div>
+        </div>
+        <div id="records" class="uk-margin-top"></div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+service : {
+  addBloodPressureRecord: (nat, nat, text, text) -> ();
+  getBloodPressureRecords: () -> (vec record {
+                                        nat;
+                                        nat;
+                                        text;
+                                        text;
+                                      }) query;
+}

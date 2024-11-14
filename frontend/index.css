@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.uk-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.uk-form-label {
+    font-weight: bold;
+}
+
+.uk-button-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.uk-button-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.uk-card {
+    margin-bottom: 15px;
+}
+
+.uk-card-title {
+    color: #3498db;
+}
