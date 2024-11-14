@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             await backend.addBloodPressureRecord(systolic, diastolic, date, time);
             form.reset();
             await displayRecords();
+            UIkit.notification('Blood pressure record added successfully!', {status: 'success', pos: 'top-center'});
         } catch (error) {
             console.error('Error adding record:', error);
+            UIkit.notification('Failed to add blood pressure record. Please try again.', {status: 'danger', pos: 'top-center'});
         } finally {
             loadingSpinner.style.display = 'none';
         }
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const records = await backend.getBloodPressureRecords();
             recordsDiv.innerHTML = '';
             if (records.length === 0) {
-                recordsDiv.textContent = 'No records found.';
+                recordsDiv.innerHTML = '<div class="uk-alert uk-alert-primary" uk-alert><p>No records found.</p></div>';
             } else {
                 records.forEach(record => {
                     const recordElement = document.createElement('div');
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         } catch (error) {
             console.error('Error fetching records:', error);
+            recordsDiv.innerHTML = '<div class="uk-alert uk-alert-danger" uk-alert><p>Failed to fetch records. Please try again.</p></div>';
         }
     }
 

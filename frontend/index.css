@@ -1,22 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 .uk-container {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.uk-heading-line > span {
+    background-color: white;
+    padding: 0 10px;
 }
 
 .uk-form-label {
-    font-weight: bold;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.uk-input {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.uk-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
 .uk-button-primary {
     background-color: #3498db;
     border-color: #3498db;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .uk-button-primary:hover {
@@ -25,9 +44,31 @@ body {
 }
 
 .uk-card {
-    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.uk-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .uk-card-title {
     color: #3498db;
+}
+
+.uk-alert {
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .uk-container {
+        padding: 15px;
+    }
+
+    .uk-form-controls {
+        margin-bottom: 15px;
+    }
+
+    .uk-button {
+        margin-top: 10px;
+    }
 }
