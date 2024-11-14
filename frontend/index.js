@@ -41,14 +41,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 recordsDiv.innerHTML = '<div class="uk-alert uk-alert-primary" uk-alert><p>No records found.</p></div>';
             } else {
                 records.forEach(record => {
+                    const [systolic, diastolic, date, time] = record;
                     const recordElement = document.createElement('div');
                     recordElement.className = 'uk-card uk-card-default uk-card-body uk-margin';
                     recordElement.innerHTML = `
                         <h3 class="uk-card-title">Blood Pressure Record</h3>
-                        <p><strong>Systolic:</strong> ${record.systolic}</p>
-                        <p><strong>Diastolic:</strong> ${record.diastolic}</p>
-                        <p><strong>Date:</strong> ${record.date}</p>
-                        <p><strong>Time:</strong> ${record.time}</p>
+                        <p><strong>Systolic:</strong> ${systolic}</p>
+                        <p><strong>Diastolic:</strong> ${diastolic}</p>
+                        <p><strong>Date:</strong> ${date}</p>
+                        <p><strong>Time:</strong> ${time}</p>
                     `;
                     recordsDiv.appendChild(recordElement);
                 });
