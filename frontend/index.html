@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 </head>
 <body>
     <div class="uk-container uk-container-small uk-margin-top">
@@ -42,7 +43,33 @@
         <div id="loadingSpinner" class="uk-margin-top uk-text-center" style="display: none;">
             <div uk-spinner></div>
         </div>
+        <div class="uk-margin-top">
+            <h2 class="uk-heading-line uk-text-center"><span>Search and Filter</span></h2>
+            <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+                <div>
+                    <label class="uk-form-label" for="filterDate">Date:</label>
+                    <input class="uk-input" type="date" id="filterDate">
+                </div>
+                <div>
+                    <label class="uk-form-label" for="filterTime">Time:</label>
+                    <input class="uk-input" type="time" id="filterTime">
+                </div>
+                <div>
+                    <label class="uk-form-label" for="filterSystolic">Systolic:</label>
+                    <input class="uk-input" type="number" id="filterSystolic">
+                </div>
+                <div>
+                    <label class="uk-form-label" for="filterDiastolic">Diastolic:</label>
+                    <input class="uk-input" type="number" id="filterDiastolic">
+                </div>
+            </div>
+            <button id="filterButton" class="uk-button uk-button-default uk-margin-top">Filter</button>
+        </div>
         <div id="records" class="uk-margin-top"></div>
+        <div id="pagination" class="uk-margin-top uk-text-center"></div>
+        <div id="chartContainer" class="uk-margin-top">
+            <canvas id="bloodPressureChart"></canvas>
+        </div>
     </div>
     <script type="module" src="index.js"></script>
 </body>

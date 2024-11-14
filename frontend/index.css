@@ -59,6 +59,11 @@ body {
     border-radius: 5px;
 }
 
+#chartContainer {
+    width: 100%;
+    height: 300px;
+}
+
 @media (max-width: 768px) {
     .uk-container {
         padding: 15px;
