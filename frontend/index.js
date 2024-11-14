@@ -9,10 +9,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         loadingSpinner.style.display = 'block';
 
-        const systolic = document.getElementById('systolic').value;
-        const diastolic = document.getElementById('diastolic').value;
+        const systolic = parseInt(document.getElementById('systolic').value, 10);
+        const diastolic = parseInt(document.getElementById('diastolic').value, 10);
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
+
+        if (isNaN(systolic) || isNaN(diastolic) || systolic < 60 || systolic > 200 || diastolic < 40 || diastolic > 120) {
+            UIkit.notification('Please enter valid blood pressure values.', {status: 'warning', pos: 'top-center'});
+            loadingSpinner.style.display = 'none';
+            return;
+        }
 
         try {
             await backend.addBloodPressureRecord(systolic, diastolic, date, time);
